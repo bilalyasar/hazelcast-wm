@@ -31,7 +31,7 @@
         <!-- needed for checkstyle/findbugs -->
         <main.basedir>${project.basedir}</main.basedir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+ja
         <jdk.version>1.6</jdk.version>
         <target.dir>target</target.dir>
         <maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
@@ -284,6 +284,7 @@
                         -Dhazelcast.mancenter.enabled=false
                         -Dhazelcast.logging.type=none
                         -Dhazelcast.test.use.network=false
+                        ${jacoco.agent.argLine}
                     </argLine>
                 </configuration>
             </plugin>
@@ -297,6 +298,9 @@
   <groupId>org.jacoco</groupId>
   <artifactId>jacoco-maven-plugin</artifactId>
   <version>0.5.8.201207111220</version>
+  <configuration>
+        <propertyName>jacoco.agent.argLine</propertyName>
+    </configuration>
   <executions>
     <execution>
       <goals>
