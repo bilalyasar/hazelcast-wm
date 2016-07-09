@@ -39,7 +39,7 @@
     </target>
     <!--
     <target name="war">
-        <jar jarfile="${war.name}">
+        <jar jarfile="${war.name}"> 
             <fileset dir="src/test/webapp" defaultexcludes="yes">
                 <include name="**/**"/>
             </fileset>
